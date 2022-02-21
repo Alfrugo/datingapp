@@ -2,19 +2,36 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Profile } = require('../../models');
 
-// get all profiles
+
+
+
+// get all profiles USE THIS TO DISPLAY THE MATCHES
+
 router.get('/', (req, res) => {
+  console.log(' - GETTING ALL PROFILES -')
   Profile.findAll({
     attributes: { exclude: ['password'] }
   })
     .then(dbProfileData => res.json(dbProfileData))
+    .then(console.log("here's the dbProfileData"))
+    // .then( console.log (res.json(dbProfileData)))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-//get one profile  // DO WE NEED THIS?
+
+
+
+
+
+
+
+
+
+
+// //get one profile  // DO WE NEED THIS?
 
 router.get('/:id', (req, res) => {
   Profile.findOne({
@@ -107,6 +124,7 @@ router.post('/login', (req, res) => {
 
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });
+      console.log ('incorrect password')
       return;
     }
 
@@ -115,7 +133,8 @@ router.post('/login', (req, res) => {
       req.session.username = dbProfileData.username;
       req.session.loggedIn = true;
 
-      res.json({ profile: dbProfileData, message: 'You are now logged in!' });       ////// SHOULD THIS BE PROFILE??
+      res.json({ profile: dbProfileData, message: 'You are now logged in!' });   
+      console.log ('you are now signed in')    ////// SHOULD THIS BE PROFILE??
     });
   });
 });
