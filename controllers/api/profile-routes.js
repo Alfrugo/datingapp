@@ -21,6 +21,7 @@ router.get('/', (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 
 
 
@@ -32,6 +33,9 @@ router.get('/', (req, res) => {
 
 
 // //get one profile  // DO WE NEED THIS?
+=======
+//get one profile 
+>>>>>>> main
 
 router.get('/:id', (req, res) => {
   Profile.findOne({
@@ -74,9 +78,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-
-  // need to pass the rest of the profile values since we are only using ONE table/model
 
   Profile.create({
     username: req.body.username,

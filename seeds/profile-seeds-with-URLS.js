@@ -75,8 +75,8 @@ const profiledata = [
     username: 'Cookie Monster Kev',
     email: 'the_drummer_scrantonicity@dundermifflin.com',
     password: 'password123',
-    bio: 'Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-    age: '38',
+    bio: 'ME THINK, WHY WASTE TIME SAY LOT WORD, WHEN FEW WORD DO TRICK. WHEN ME PRESIDENT THEY SEE. THEY SEE.',
+    age: '31',
     shift: '2',
     contact: 'https://www.instagram.com/bbbaumgartner/?hl=en',
     imageurl: 'https://rb.gy/mokeqg'
