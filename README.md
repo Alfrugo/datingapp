@@ -1,6 +1,6 @@
 # TiedUp
 
-![Screenshot (11)](https://user-images.githubusercontent.com/93059565/147293033-5726fcb8-d4d1-4de5-9c25-135c795e4d76.png)
+![Screenshot (11)](https://user-images.githubusercontent.com/36056407/155634718-cb347e4b-253b-4e4f-8fbd-43bd95184308.png)
 
 ## Table of Contents
 
