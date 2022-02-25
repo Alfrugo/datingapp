@@ -22,6 +22,7 @@ router.get('/', (req, res) => {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -36,33 +37,26 @@ router.get('/', (req, res) => {
 =======
 //get one profile 
 >>>>>>> main
+=======
+router.get('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+   
+    req.session.destroy(() => {
+      res.redirect("/");
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+>>>>>>> main
 
+//get one profile 
 router.get('/:id', (req, res) => {
   Profile.findOne({
     attributes: { exclude: ['password'] },
     where: {
       id: req.params.id
     },
-    // include: [
-    //   {
-    //     model: Post,
-    //     attributes: ['id', 'title', 'post_url', 'created_at']
-    //   },
-    //   {
-    //     model: Comment,
-    //     attributes: ['id', 'comment_text', 'created_at'],
-    //     include: {
-    //       model: Post,
-    //       attributes: ['title']
-    //     }
-    //   },
-    //   {
-    //     model: Post,
-    //     attributes: ['title'],
-    //     through: Vote,
-    //     as: 'voted_posts'
-    //   }
-    // ]
   })
     .then(dbProfileData => {
       if (!dbProfileData) {
@@ -140,15 +134,6 @@ router.post('/login', (req, res) => {
   });
 });
 
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
 
 router.put('/:id', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
